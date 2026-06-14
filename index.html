@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레서판다 방어 작전</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="topUi" class="top-ui">
+        <section class="brand-box">
+            <h1>레서판다 방어 작전</h1>
+            <div class="stats">
+                <span id="moneyText">재화 280</span>
+                <span id="stageText">단계 1/5</span>
+            </div>
+            <div class="time-bar"><span id="timeBar"></span></div>
+        </section>
+
+        <section class="weapon-box">
+            <p id="tipText">장거리 공격 / 이미 배치한 칸을 누르면 강화</p>
+            <div class="weapon-list">
+                <button class="weapon-card active" data-weapon="gun">
+                    <b>총</b>
+                    <small>비용 65</small>
+                </button>
+                <button class="weapon-card" data-weapon="sword">
+                    <b>검</b>
+                    <small>비용 55</small>
+                </button>
+                <button class="weapon-card" data-weapon="shield">
+                    <b>방패</b>
+                    <small>비용 45</small>
+                </button>
+            </div>
+        </section>
+
+        <button id="battleButton" class="battle-button">전투 시작</button>
+    </div>
+
+    <div id="messageBox" class="message-box">시작 버튼을 눌러 주세요.</div>
+
+    <div id="startScreen" class="screen start-screen">
+        <div class="screen-panel">
+            <p class="eyebrow">전략 방어 게임 프로젝트</p>
+            <h2>레서판다 방어 작전</h2>
+            <p>총, 검, 방패를 배치해서 몰려오는 적을 막으세요.</p>
+            <button id="startButton">시작하기</button>
+        </div>
+    </div>
+
+    <div id="endScreen" class="screen end-screen hidden">
+        <div class="screen-panel">
+            <p class="eyebrow" id="endSubText">결과</p>
+            <h2 id="endTitle">방어 성공</h2>
+            <p id="endText">작전 구역을 끝까지 지켜냈습니다.</p>
+            <button id="restartButton">처음으로</button>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="game.js"></script>
+</body>
+</html>

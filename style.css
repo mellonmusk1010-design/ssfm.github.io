@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(148, 194, 111, 0.22), transparent 34%),
+        radial-gradient(circle at 78% 20%, rgba(218, 171, 74, 0.18), transparent 30%),
+        #080b0f;
+    user-select: none;
+    font-family: Arial, "Malgun Gothic", sans-serif;
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: crosshair;
+}
+
+button {
+    font: inherit;
+}
+
+.top-ui {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 5;
+    height: 136px;
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+    gap: 18px;
+    align-items: center;
+    padding: 14px 18px;
+    color: #f4f0df;
+    background: linear-gradient(180deg, rgba(18, 24, 30, 0.96), rgba(25, 32, 39, 0.92));
+    border-top: 3px solid #d8ba5a;
+    border-bottom: 8px solid #090c10;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+}
+
+.brand-box h1 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.stats {
+    display: grid;
+    gap: 5px;
+    font-weight: 700;
+}
+
+#moneyText {
+    color: #f3d367;
+}
+
+#stageText {
+    color: #bdd9ee;
+}
+
+.time-bar {
+    width: 126px;
+    height: 10px;
+    margin-top: 9px;
+    overflow: hidden;
+    background: #0b1015;
+    border-radius: 99px;
+}
+
+.time-bar span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #75d66f, #d8ba5a);
+    border-radius: inherit;
+}
+
+.weapon-box {
+    align-self: stretch;
+    display: grid;
+    align-content: center;
+    gap: 9px;
+}
+
+.weapon-box p {
+    margin: 0;
+    color: #c8d1dc;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.weapon-list {
+    display: flex;
+    gap: 14px;
+}
+
+.weapon-card {
+    width: 112px;
+    height: 58px;
+    display: grid;
+    gap: 4px;
+    place-content: center;
+    color: #eef4fb;
+    background: #242d36;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 4px solid #596676;
+    cursor: pointer;
+}
+
+.weapon-card:hover,
+.weapon-card.active {
+    background: #34475e;
+    border-color: #dfefff;
+    border-top-color: #f1cf63;
+}
+
+.weapon-card b {
+    font-size: 16px;
+}
+
+.weapon-card small {
+    color: #f2cd5c;
+    font-weight: 700;
+}
+
+.battle-button,
+.screen-panel button {
+    height: 46px;
+    border: 0;
+    color: #101317;
+    background: linear-gradient(180deg, #f2d46c, #b5832d);
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.45), 0 8px 16px rgba(0, 0, 0, 0.22);
+}
+
+.battle-button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.message-box {
+    position: fixed;
+    z-index: 6;
+    top: 154px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 360px;
+    padding: 10px 28px;
+    color: #fff;
+    text-align: center;
+    font-weight: 800;
+    background: rgba(15, 21, 27, 0.84);
+    border: 1px solid rgba(191, 215, 234, 0.75);
+}
+
+.screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    color: #f3f0e7;
+    background: rgba(5, 8, 11, 0.62);
+}
+
+.screen-panel {
+    width: min(660px, calc(100vw - 44px));
+    padding: 42px 54px 46px;
+    text-align: center;
+    background: rgba(12, 17, 22, 0.78);
+    border: 1px solid rgba(240, 209, 106, 0.55);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+}
+
+.screen-panel .eyebrow {
+    margin: 0 0 14px;
+    color: #bdd9ee;
+    font-weight: 800;
+}
+
+.screen-panel h2 {
+    margin: 0 0 16px;
+    font-size: 52px;
+    line-height: 1;
+}
+
+.screen-panel p {
+    margin: 0 0 28px;
+    font-size: 18px;
+    color: #d8dee6;
+}
+
+.screen-panel button {
+    width: 220px;
+    font-size: 20px;
+}
+
+.end-screen {
+    background:
+        linear-gradient(rgba(5, 8, 11, 0.66), rgba(5, 8, 11, 0.74)),
+        url("엔딩.webp") center / cover no-repeat;
+}
+
+.message-box.hidden,
+.hidden {
+    display: none !important;
+}
